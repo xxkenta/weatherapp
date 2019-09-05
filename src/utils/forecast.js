@@ -11,8 +11,9 @@ const forecast = (lat, long, callback) => {
         } else {
             currTemp = body.currently.temperature;
             currPrecipProb = body.currently.precipProbability;
+            currStormDistance = body.currently.nearestStormDistance;
 
-            callback(undefined, body.daily.data[0].summary + " It is currently " + currTemp + " degrees out. There is a " + currPrecipProb + "% chance of rain.")
+            callback(undefined, body.daily.data[0].summary + " It is currently " + currTemp + " degrees out. There is a " + currPrecipProb + "% chance of rain. The closest storm is " + currStormDistance + " miles away.")
         }
     });
 }
